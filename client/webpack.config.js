@@ -19,18 +19,12 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-        filename: 'index.html',
-        chunks: ['main']
-      }),
-      new HtmlWebpackPlugin({
-        template: './src/install.html',
-        filename: 'install.html',
-        chunks: ['install']
+        template: './index.html',
+        title: 'J.A.T.E',
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
         name: 'Your Text Editor',
@@ -40,7 +34,7 @@ module.exports = () => {
         theme_color: '#ffffff',
         icons: [
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
           },
         ],
