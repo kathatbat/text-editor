@@ -29,8 +29,8 @@ export const getDb = async () => {
   const store = tx.objectStore('jate');
   const content = await store.getAll();
   await tx.done;
-  console.log('Content retrieved from database:', content);
-  return content;
+  console.log('Content retrieved from database:', content[content.length - 1]);
+  return content[content.length - 1];
 };
 
 initdb();
